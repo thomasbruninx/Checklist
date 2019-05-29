@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: #c94b4b;
+	background: linear-gradient(to right, #c94b4b, #4b134f);
+}
+
+.content {
+	max-width: 640px;
+	font-family: "Arimo", sans-serif;
+	font-size: 13px;
+}
+
+ul.checklist {
+	list-style: none;
+	padding: 20px;
+}
+
+ul.checklist li {
+	display: inline;
+}
+
+ul.checklist li label {
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.9);
+	border: 2px solid rgba(139, 139, 139, 0.3);
+	color: #adadad;
+	border-radius: 25px;
+	white-space: nowrap;
+	margin: 3px 0px;
+	user-select: none;
+	transition: all 0.2s;
+	padding: 8px 12px;
+	cursor: pointer;
+}
+
+ul.checklist li label::before {
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 12px;
+	padding: 2px 6px 2px 2px;
+	content: "\f067";
+	transition: transform 0.3s ease-in-out;
+}
+
+ul.checklist li input[type="checkbox"]:checked + label::before {
+	content: "\f00c";
+	transform: rotate(-360deg);
+	transition: transform 0.3s ease-in-out;
+}
+
+ul.checklist li input[type="checkbox"]:checked + label {
+	border: 2px solid rgb(137, 41, 107);
+	background: rgb(87, 26, 68);
+	color: #fff;
+	transition: all 0.2s;
+}
+
+ul.checklist li input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+}
+
+ul.checklist li input[type="checkbox"]:focus + label {
+	border: 2px solid rgb(199, 67, 157);
+}
